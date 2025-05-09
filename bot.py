@@ -1,10 +1,10 @@
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
 
-# замените на ваш токен от BotFather
-TOKEN = '7238885317:AAFfJ3HwxxVCAGrH4hqUVtbjdTZXi1pjho0'
+TOKEN = os.getenv("BOT_TOKEN")
+app = ApplicationBuilder().token(TOKEN).build()
 
-# словарь для хранения этапов прохождения квеста каждым пользователем
+
 user_stage = {}
 
 # правильный ответ для первого квеста
